@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #editor {
+            flex: 1;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Markdown Editor</h1>
+    </header>
+    <div id="editor"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/markdown/markdown.min.js"></script>
+    <script>
+        // Initialize CodeMirror editor
+        const editor = CodeMirror(document.getElementById('editor'), {
+            mode: 'markdown',
+            lineNumbers: true,
+            theme: 'default',
+            lineWrapping: true
+        });
+
+        // Add placeholder text
+        editor.setValue('# Welcome to Markdown Editor\n\nStart typing your markdown content here...');
+    </script>
+</body>
+</html>
