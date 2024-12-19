@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <style>
+        
+        body, html {
+            background-color: beige;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        main {
+            text-align: center;
+        }
+
+        
+        .typewriter {
+            font-family: 'Courier New', Courier, monospace; 
+            white-space: nowrap; 
+            overflow: hidden; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My First Webpage</h1>
+    </header>
+
+    <main>
+        <section>
+            <p class="typewriter" id="typing-text"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My First Webpage Genius Creator</p>
+    </footer>
+
+    <script>
+        // Text, který se bude zobrazovat
+        const text = "My first webpage. I am a genius!";
+        let i = 0;
+        const speed = 100; // Rychlost psaní (ms mezi znaky)
+
+        // Funkce pro zobrazení textu jako na psacím stroji
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed); // Zavolání funkce znovu s určitým zpožděním
+            }
+        }
+
+        // Spuštění funkce při načtení stránky
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
