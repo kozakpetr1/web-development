@@ -45,21 +45,20 @@
     </footer>
 
     <script>
-        // Text, který se bude zobrazovat
+        
         const text = "My first webpage. I am a genius!";
         let i = 0;
-        const speed = 100; // Rychlost psaní (ms mezi znaky)
+        const speed = 100; 
 
-        // Funkce pro zobrazení textu jako na psacím stroji
+        
         function typeWriter() {
             if (i < text.length) {
                 document.getElementById("typing-text").textContent += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, speed); // Zavolání funkce znovu s určitým zpožděním
+                setTimeout(typeWriter, speed); 
             }
         }
 
-        // Spuštění funkce při načtení stránky
         window.onload = typeWriter;
     </script>
 </body>
