@@ -6,9 +6,9 @@
     $foo = fopen("werich.txt", "r") or die("Soubor nelze otevřít!");
     $html = "\n<div>\n";
     while(!feof($foo)) {
-        $html .= "\t" . fgets($foo) . "<br>";
+        $html .= "\t" . rtrim(fgets($foo)) . "<br>\n";
     }
-    $html .= "\n</div>\n";
+    $html .= "</div>\n";
     fclose($foo);
 
     $fow = fopen("werich.html", "w") or die("soubor nelze otevřít!");
